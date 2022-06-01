@@ -1,46 +1,117 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Basic typeScript
+there Are All Kinds of typeScript types.
 
-## Available Scripts
+## Bulit in type
 
-In the project directory, you can run:
+let idNo: number = 590
+ let myNumber:number = 340
+ myNumber = 790
+ console.log(myNumber)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ let myName:string = "Mohammad Mamun";
+ myName= "Juboraj Islam mamun"
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+ let isAdmin: boolean = true
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ ## Uninon Data type
+ #explore: Eker odik type use korte bebohar hoy..
+ 
 
-### `npm run build`
+ let userId: number| string;
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ userId = 203
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ const userhendeler = (userId: number| boolean): void =>{
+       console.log(userId)
+ }
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ userhendeler(708)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##  Array data type
+ let userAddress: string[];
+ userAddress= ["chitagong" , "dhaka" , "commilla"]
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ let userIdNo : number[] = [33, 55, 89]
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+ let address : Array<string> = ['chittagong']
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Arrray Multiple type
+let userInfo : (number| string)[];
+userInfo = [33 , "mamun", 444, 'nadim']
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+let moreUserInfo :(boolean|string)[] = [true, "33"]
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Typle data type
+#Explore: array key , value niye kaj korte eti use kora hoy 
+
+let users:[number , string];
+users = [1 , "mamun" ,]
+
+let moreUser:[boolean , string] = [true , "mamun"]
+
+## Enum data type
+#explore: ei data type likte hole enam dite hobe. er vitor veribale dite hobe ja index onusare man pabe
+
+
+
+
+
+enum RequestType {
+      readData,
+      saveData,
+      deleteData,
+}
+
+enum RequestType2 {
+      readData= "READ_Daata",
+      saveData= "SAVE_data",
+      deleteData= "DELETE_data"
+}
+
+
+## Any Type
+#je veribale er type declar kora hoy na etike any type bole
+
+
+let userName;
+let profile;
+
+## object type
+let user: {userName: string , id: number}
+user = {userName: "Mamun" , id: 344}
+
+let moreUser1: {userName: string , id:(number| string)}
+moreUser1 = {userName: "Mamuun" , id: "56"}
+
+let moreUser2 : {usrname: (string| boolean) , id: (number| string)} = {usrname: true , id: "555"}
+
+
+## array of object
+
+let id: object[];
+
+id = [{name: "mamun"}]
+
+## Optonal type
+#explore kuno varivale use korte na caile 
+
+const myInfromation = (name:string , id:(string| number) , subject?: string): void =>{
+      console.log(name, id)
+}
+
+myInfromation("mamun" , 444 , )
+
+## custome data type
+#explore: custome babe type create kora 
+
+type Alluser = {name: string , id: number}
+
+let user5: Alluser = {name: 'mamun' , id: 44}
+
+let user6 : Alluser = {name: "nadim" , id: 56}
