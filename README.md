@@ -1,8 +1,11 @@
 
-# Basic typeScript
+# My Basic TypeScript Documentation
 there Are All Kinds of typeScript types.
 
 ## Bulit in type
+- number , string , boolean , null , undifine
+Example:
+
 ```javascript
 let idNo: number = 590
  let myNumber:number = 340
@@ -17,8 +20,9 @@ let idNo: number = 590
 
 ```
  ## Uninon Data type
- #explore: Eker odik type use korte bebohar hoy..
+ **Explore:** Eker odik type use korte bebohar hoy..
  
+ Example:
 ```javascript
  let userId: number| string;
 
@@ -34,10 +38,11 @@ let idNo: number = 590
 
 
 ##  Array data type
- let userAddress: string[];
- userAddress= ["chitagong" , "dhaka" , "commilla"]
+
 
  ```javascript
+  let userAddress: string[];
+ userAddress= ["chitagong" , "dhaka" , "commilla"]
 
  let userIdNo : number[] = [33, 55, 89]
 
@@ -52,20 +57,21 @@ let moreUserInfo :(boolean|string)[] = [true, "33"]
 ```
 
 ## Typle data type
-#Explore: array key , value niye kaj korte eti use kora hoy 
+**Explore:** array key , value niye kaj korte eti use kora hoy 
+
 ```javascript
 let users:[number , string];
 users = [1 , "mamun" ,]
 
 let moreUser:[boolean , string] = [true , "mamun"]
+
 ```
 
 ## Enum data type
-#explore: ei data type likte hole enam dite hobe. er vitor veribale dite hobe ja index onusare man pabe
+**Explore:** ei data type likte hole enam dite hobe. er vitor veribale dite hobe ja index onusare man pabe
 
 
 ```javascript
-
 
 enum RequestType {
       readData,
@@ -81,12 +87,14 @@ enum RequestType2 {
 
 ```
 ## Any Type
-#je veribale er type declar kora hoy na etike any type bole
+**Explore:** je veribale er type declar kora hoy na etike any type bole
+
 ```javascript
 
 let userName;
 let profile;
 ```
+
 ## object type
 ```javascript
 let user: {userName: string , id: number}
@@ -104,26 +112,25 @@ let id: object[];
 
 id = [{name: "mamun"}]
 ```
+
 ## Optonal type
-#explore kuno varivale use korte na caile 
+**Explore:** kuno varivale use korte na caile 
 ```javascript
 const myInfromation = (name:string , id:(string| number) , subject?: string): void =>{
       console.log(name, id)
 }
-
 myInfromation("mamun" , 444 , )
 
+
+
 ## custome data type
-#explore: custome babe type create kora 
+**Explore:** custome babe type create kora 
 
 type Alluser = {name: string , id: number}
-
 let user5: Alluser = {name: 'mamun' , id: 44}
-
 let user6 : Alluser = {name: "nadim" , id: 56}
 
-
-Onk somoy verible er man ki hobe ta janty pari . sei jonno etike ekti varible reke dite pari
+// Onk somoy verible er man ki hobe ta janty pari . sei jonno etike ekti varible reke dite pari
 
 type RequreType = "GET" | "POST"
 
@@ -136,7 +143,7 @@ userPOST("POST")
 
 ##  Class and object 
 
-example: 
+**Example** 
 ```javascript
 class MyDescription {
       // propertis , constructor , methods 
@@ -162,7 +169,7 @@ let user1 = new MyDescription("Md Mamun", 33)
 
 
 ##  Inhertance
-#Explore: Inhertance Er Orddeshho Holo ekti clss er Item onno cls e niye ana.
+**Explore:** Inhertance Er Orddeshho Holo ekti clss er Item onno cls e niye ana.
 Ortthat ekti class er common method gulo onno cls e use kora
 
 ```javascript
@@ -184,7 +191,7 @@ class MyBio {
 
 }
 
-// inhertance korte hole extends use korte hobe 
+// inhertance korte hole extends use korte hobe ---------
 class YourBio extends MyBio {
       studentId: number
 
@@ -207,7 +214,7 @@ console.log(yourBio1)
 ```
 
 ## Abstraction class 
-#Explore: etir use korar reseon hocce etir vetore method ki kaj korbe ta na dekano.
+**Explore:** etir use korar reseon hocce etir vetore method ki kaj korbe ta na dekano.
 Ortthat eer method niye je kew nijer moto use korte parbe
 
 Example:
