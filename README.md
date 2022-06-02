@@ -245,3 +245,114 @@ let details = new Studnet("mamun", 556)
 
 ```
 
+## Encapsulation and access modifiers
+- 4 key principles of Object Oriented Programming (OOP): Inheritance, Abstraction, Encapsulation, Polymorphism.
+- Encapsulation helps us to manage the visibility of class members.
+- Access modifiers: public, private, protected, readonly
+
+**explore:** eti hocce object er modde member thake. constructor , method thake. egula hocce je veribale e nam deoa ace tar method
+
+## access Modifiers 
+**explore:** etir kaj hocce encapsulation er member golo ke kew Access , read , modifay korte parbe kina ta manten kore
+
+- access Modifies 4 rokomer
+public, private, protected, readOnly
+
+```javascript
+
+
+// Public ---------
+class User3 {
+      public name: string
+      public age: number
+
+      constructor(name: string , age: number){
+            this.name = name
+            this.age = age
+      }
+      display(): void{
+            console.log("hey Public")
+      }
+}
+
+let publicUser = new User3("mamun" , 500)
+
+// note: public gulake bahir theke access korte parbe modifay korte parbe 
+publicUser.name = "Juboraj Islam"
+
+
+// protected  --------------
+class User4 {
+      protected name: string
+      protected age: number
+
+      constructor(name: string , age: number){
+            this.name = name
+            this.age = age
+      }
+      display(): void{
+            console.log("hey Public")
+      }
+}
+
+let protectedUser = new User4("mamun" , 500)
+protectedUser.display()
+// note: protected membar gulake inherits korte parbe kinto bahir thekea access modifay korte parbe na
+
+
+// private -----------------
+class User5 {
+      private name: string
+      private age: number
+
+      constructor(name: string ,age: number){
+            this.name= name
+            this.age = age
+      }
+
+      display():void{
+            console.log("helllow")
+      }
+
+      // private member ke bahir theke access korar jonno ja korte hobe
+      setAge(age: number):void{
+            // Orthat private membar e arkti public method er modde rheke bahir theke call korbo
+            this.age = age
+      }
+
+      // modifay korar jonno method thake retun kore debo 
+      getAge(): number{
+            return this.age
+      }
+}
+
+let privateUser = new User5("Mamun", 55)
+privateUser.display()
+privateUser.setAge(50)
+privateUser.getAge()
+console.log(privateUser.getAge())
+// note: private member gulo ke bahir theke access modifay kora jabe na. inherirt kora jabe na
+
+
+// readonly ........................
+class RedOnly {
+      readonly name: string
+      readonly age: number
+
+      constructor(name: string , age :number) {
+            this.name = name
+            this.age = number
+      }
+
+      display():void{
+            console.log("helllow")
+      }
+}
+
+let redOnly = new RedOnly("name" , 50)
+
+// note: readonly te access korte parbo kinto modifay korte parbo na 
+
+
+```
+
