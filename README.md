@@ -123,7 +123,7 @@ myInfromation("mamun" , 444 , )
 
 ```
 
-## custome data type
+## custome data type /Aliasis type
 **Explore:** custome babe type create kora 
 ```javascript
 type Alluser = {name: string , id: number}
@@ -395,5 +395,123 @@ orderInfo =(p:number , n: number) =>{
 }
 
 orderInfo(400 , 5)
+
+```
+
+## InterFace
+**Explore:** Interface hocce kuno varible, object, funcation er poggaming e use korbo setar stracture age theke create kora 
+
+Example:
+```javascript
+
+interface dusineInfo {
+      width: number,
+      hight: number
+}
+
+const desinePatten = (info: dusineInfo): void =>{
+      let newWidth = info.width
+      let newHight = info.hight
+     
+}
+
+const des = {
+      width: 50,
+      hight: 60
+}
+desinePatten(des)
+
+// interFace use Class -------------
+interface Player {
+      name: string,
+      age: number,
+      country: string
+
+      play():void
+}
+
+class  Play implements Player{
+      // note: Class e interFace use korle implements dite hobe 
+      name: string 
+      age: number
+      country: string
+
+      constructor(name: string , age: number , country:string){
+            this.name = name;
+            this.age = age;
+            this.country = country
+      }
+
+      play(): void {
+            console.log("helllow")
+      }
+}
+
+let morePlayer = new Play("mamun" , 44 , "bangladesh")
+
+```
+
+## Generics 
+**Example** -  judi funcation er peramiter hisabe object nei , tahole funcation er bahir theke se object er value read/access kora jay na. object er value access korar jonno generics use kore pari.
+- Ortthat user je data dicce funcation sei data ki recive korse jane na.
+
+Example:
+```javascript
+
+const addid = (obj: object) => {
+      let id:number = Math.floor(Math.random() * 100)
+      return {...obj , id}
+}
+
+let UserId = addid({
+      names: "Mamun",
+      age: 33
+})
+
+// je peramiter dicce ta read korar jonno peramiter er age <T> debo. and peramiter er type debo se T
+// example:
+const addid2 = <T> (obj: T) => {
+      let id:number = Math.floor(Math.random() * 100)
+      return {...obj , id}
+}
+
+let UserId2 = addid2({
+      names: "Mamun",
+      age: 33
+})
+UserId2.age = 50
+
+// note: ekn user ja peramiter patabe tai ei funcation recive korbe. judi specific otoba api ekta object patate cay and funtion setike cahara r kisu recive na tar jonno ja korte hobe 
+// example: 
+const addid3 = <T extends Object> (obj: T) => {
+      let id:number = Math.floor(Math.random() * 100)
+      return {...obj , id}
+}
+
+let UserId3 = addid3({
+      name: "Mamun"
+})
+
+// caile type o bosiye dite pari 
+
+
+// MoreExample: ekhane data ki type er asbe janina tai generic vabe bosiye debo
+interface APIresponse <T> {
+      status: number
+      type: string
+      data: T
+}
+
+const response: APIresponse <object> ={
+      status: 200,
+      type: "Good",
+      data: {
+            name: "text",
+            someThing: 300
+      }
+
+} 
+
+
 
 ```

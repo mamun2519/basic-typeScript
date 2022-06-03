@@ -1,7 +1,4 @@
-import { access } from "fs";
-import { type } from "os";
-import { clearScreenDown } from "readline";
-import { inherits } from "util";
+
 // 1, Build in type .....................
 
 
@@ -263,6 +260,7 @@ class Studnet extends User {
 }
 
 let details = new Studnet("mamun", 556)
+console.log(details)
 
 /* 13, Encapsulation and access modifiers
 4 key principles of Object Oriented Programming (OOP): Inheritance, Abstraction, Encapsulation, Polymorphism.
@@ -285,16 +283,16 @@ class User3 {
       public name: string
       public age: number
 
-      constructor(name: string , age: number){
+      constructor(name: string, age: number) {
             this.name = name
             this.age = age
       }
-      display(): void{
+      display(): void {
             console.log("hey Public")
       }
 }
 
-let publicUser = new User3("mamun" , 500)
+let publicUser = new User3("mamun", 500)
 
 // note: public gulake bahir theke access korte parbe modifay korte parbe 
 publicUser.name = "Juboraj Islam"
@@ -305,16 +303,16 @@ class User4 {
       protected name: string
       protected age: number
 
-      constructor(name: string , age: number){
+      constructor(name: string, age: number) {
             this.name = name
             this.age = age
       }
-      display(): void{
+      display(): void {
             console.log("hey Public")
       }
 }
 
-let protectedUser = new User4("mamun" , 500)
+let protectedUser = new User4("mamun", 500)
 protectedUser.display()
 // note: protected membar gulake inherits korte parbe kinto bahir thekea access modifay korte parbe na
 
@@ -324,23 +322,23 @@ class User5 {
       private name: string
       private age: number
 
-      constructor(name: string ,age: number){
-            this.name= name
+      constructor(name: string, age: number) {
+            this.name = name
             this.age = age
       }
 
-      display():void{
+      display(): void {
             console.log("helllow")
       }
 
       // private member ke bahir theke access korar jonno ja korte hobe
-      setAge(age: number):void{
+      setAge(age: number): void {
             // Orthat private membar e arkti public method er modde rheke bahir theke call korbo
             this.age = age
       }
 
       // modifay korar jonno method thake retun kore debo 
-      getAge(): number{
+      getAge(): number {
             return this.age
       }
 }
@@ -358,17 +356,18 @@ class RedOnly {
       readonly name: string
       readonly age: number
 
-      constructor(name: string , age :number) {
+      constructor(name: string, age: number) {
             this.name = name
             this.age = number
       }
 
-      display():void{
+      display(): void {
             console.log("helllow")
       }
 }
 
-let redOnly = new RedOnly("name" , 50)
+let redOnly = new RedOnly("name", 50)
+console.log(redOnly)
 
 // note: readonly te access korte parbo kinto modifay korte parbo na 
 
@@ -376,25 +375,135 @@ let redOnly = new RedOnly("name" , 50)
 // 15 , Type Aliases 
 // explore: etir kaj hocce type declore kore tar vitor e type diye onno verible e se type use kora 
 
-type userName = string | number
-type userType = {name: string , id: number}
+type userNames = string | number
+type userType = { name: string, id: number }
 
-let ourUsr: userName = "Mamun"
+let ourUsr: userNames = "Mamun"
+console.log(ourUsr)
 
-const userHendelers = (details: userType): void=>{
+const userHendelers = (details: userType): void => {
       console.log(details)
 
 }
 
-userHendelers({name: "Mamun" , id: 55})
+userHendelers({ name: "Mamun", id: 55 })
 
 /* 16, Funcation Signature
 explore: etir maddome ekti funcation er statement set kore diye  sei onujai kaj kora. */
 
-let orderInfo: (price: number , name: number) => number;
+let orderInfo: (price: number, name: number) => number;
 
-orderInfo =(p:number , n: number) =>{
+orderInfo = (p: number, n: number) => {
       return p + n
 }
 
-orderInfo(400 , 5)
+orderInfo(400, 5)
+
+
+/* 17, InterFace
+Explore: Interface hocce kuno varible, object, funcation er poggaming e use korbo setar stracture age theke create kora */
+
+interface dusineInfo {
+      width: number,
+      hight: number
+}
+
+const desinePatten = (info: dusineInfo): void =>{
+      let newWidth = info.width
+      let newHight = info.hight
+     
+}
+
+const des = {
+      width: 50,
+      hight: 60
+}
+desinePatten(des)
+
+// interFace use Class -------------
+interface Player {
+      name: string,
+      age: number,
+      country: string
+
+      play():void
+}
+
+class  Play implements Player{
+      // note: Class e interFace use korle implements dite hobe 
+      name: string 
+      age: number
+      country: string
+
+      constructor(name: string , age: number , country:string){
+            this.name = name;
+            this.age = age;
+            this.country = country
+      }
+
+      play(): void {
+            console.log("helllow")
+      }
+}
+
+let morePlayer = new Play("mamun" , 44 , "bangladesh")
+
+/* 18 , Generics 
+Explore: judi funcation er peramiter hisabe object nei , tahole funcation er bahir theke se object er value read/access kora jay na. object er value access korar jonno generics use kore pari.
+Ortthat user je data dicce funcation sei data ki recive korse jane na.
+ */
+
+const addid = (obj: object) => {
+      let id:number = Math.floor(Math.random() * 100)
+      return {...obj , id}
+}
+
+let UserId = addid({
+      names: "Mamun",
+      age: 33
+})
+
+// je peramiter dicce ta read korar jonno peramiter er age <T> debo. and peramiter er type debo se T
+// example:
+const addid2 = <T> (obj: T) => {
+      let id:number = Math.floor(Math.random() * 100)
+      return {...obj , id}
+}
+
+let UserId2 = addid2({
+      names: "Mamun",
+      age: 33
+})
+UserId2.age = 50
+
+// note: ekn user ja peramiter patabe tai ei funcation recive korbe. judi specific otoba api ekta object patate cay and funtion setike cahara r kisu recive na tar jonno ja korte hobe 
+// example: 
+const addid3 = <T extends Object> (obj: T) => {
+      let id:number = Math.floor(Math.random() * 100)
+      return {...obj , id}
+}
+
+let UserId3 = addid3({
+      name: "Mamun"
+})
+
+// caile type o bosiye dite pari 
+
+// MoreExample: ekhane data ki type er asbe janina tai generic vabe bosiye debo
+interface APIresponse <T> {
+      status: number
+      type: string
+      data: T
+}
+
+const response: APIresponse <object> ={
+      status: 200,
+      type: "Good",
+      data: {
+            name: "text",
+            someThing: 300
+      }
+
+} 
+
+
