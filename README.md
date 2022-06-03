@@ -121,11 +121,11 @@ const myInfromation = (name:string , id:(string| number) , subject?: string): vo
 }
 myInfromation("mamun" , 444 , )
 
-
+```
 
 ## custome data type
 **Explore:** custome babe type create kora 
-
+```javascript
 type Alluser = {name: string , id: number}
 let user5: Alluser = {name: 'mamun' , id: 44}
 let user6 : Alluser = {name: "nadim" , id: 56}
@@ -363,3 +363,37 @@ let redOnly = new RedOnly("name" , 50)
 
 ```
 
+## Type Aliases 
+**ExPlore:** etir kaj hocce type declore kore tar vitor e type diye onno verible e se type use kora.
+
+```javascript 
+
+
+type userName = string | number
+type userType = {name: string , id: number}
+
+let ourUsr: userName = "Mamun"
+
+const userHendelers = (details: userType): void=>{
+      console.log(details)
+
+}
+
+userHendelers({name: "Mamun" , id: 55})
+
+```
+
+## Funcation Signature
+
+**Explore:** etir maddome ekti funcation er statement set kore diye  sei onujai kaj kora.
+
+```javascript
+t orderInfo: (price: number , name: number) => number;
+
+orderInfo =(p:number , n: number) =>{
+      return p + n
+}
+
+orderInfo(400 , 5)
+
+```

@@ -371,3 +371,30 @@ class RedOnly {
 let redOnly = new RedOnly("name" , 50)
 
 // note: readonly te access korte parbo kinto modifay korte parbo na 
+
+
+// 15 , Type Aliases 
+// explore: etir kaj hocce type declore kore tar vitor e type diye onno verible e se type use kora 
+
+type userName = string | number
+type userType = {name: string , id: number}
+
+let ourUsr: userName = "Mamun"
+
+const userHendelers = (details: userType): void=>{
+      console.log(details)
+
+}
+
+userHendelers({name: "Mamun" , id: 55})
+
+/* 16, Funcation Signature
+explore: etir maddome ekti funcation er statement set kore diye  sei onujai kaj kora. */
+
+let orderInfo: (price: number , name: number) => number;
+
+orderInfo =(p:number , n: number) =>{
+      return p + n
+}
+
+orderInfo(400 , 5)
